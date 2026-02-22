@@ -1,0 +1,339 @@
+body {
+    font-family: 'Arial', serif;
+    background: linear-gradient(-45deg, #df0000, #ff780a, #ce0000, #a4580c);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+   color: rgb(255, 247, 0);
+    text-shadow: 
+        0 0 10px rgba(255,215,0,0.7),
+        0 0 20px rgba(255,215,0,0.5),
+        0 0 30px rgba(255,215,0,0.3);
+    overflow-x: hidden;
+}
+.intro {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 10px;
+    width: 85%;
+    margin: 40px auto;
+    color: white;
+
+    display: flex;              /* QUAN TRỌNG */
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.text {
+    flex: 2;                    /* chữ chiếm nhiều hơn */
+    text-align: left;
+}
+
+.image-box {
+    flex: 1;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+/* Gradient chuyển động */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url("https://img.freepik.com/premium-photo/watercolor-illustration-vintage-postcard-victory-day-silhouettes-red-army-soldiers-red-banner-copy-space-free-space-text_595836-3801.jpg?w=2000");
+    background-size: cover;       /* Ảnh phủ toàn bộ header */
+    background-position: center;  /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại */
+    letter-spacing: 3px;
+    animation: fadeSlideDown 1.5s ease;
+}
+header h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: rgb(255, 247, 0);
+    text-shadow: 
+        0 0 10px rgba(255,215,0,0.7),
+        0 0 20px rgba(255,215,0,0.5),
+        0 0 30px rgba(255,215,0,0.3);
+}
+
+/* Header xuất hiện cinematic */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+nav {
+    text-align: center;
+    background: rgba(0,0,0,0.85);
+    padding: 20px;
+}
+
+nav a {
+    color: rgb(255, 242, 0);
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: bold;
+    position: relative;
+    transition: 0.4s;
+}
+
+.nav-bar {
+    background: rgba(0,0,0,0.9);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Link */
+.nav-bar a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 30px;
+    transition: 0.3s;
+    overflow: hidden; /* QUAN TRỌNG để ẩn vệt sáng ngoài vùng */
+}
+
+.nav-bar a:hover {
+    color: gold;
+}
+
+/* ✨ Vệt sáng */
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.7) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+}
+
+/* Hover -> chạy vệt sáng */
+.nav-bar a:hover::after {
+    animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes targetShake {
+    0% { transform: translateY(-50%) scale(1) translateX(0); }
+    25% { transform: translateY(-50%) scale(1) translateX(-2px); }
+    50% { transform: translateY(-50%) scale(1) translateX(2px); }
+    75% { transform: translateY(-50%) scale(1) translateX(-1px); }
+    100% { transform: translateY(-50%) scale(1) translateX(0); }
+}
+
+@keyframes cinematicFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.home-page {
+    background-image: url("https://tse1.mm.bing.net/th/id/OIP.qXC7iGSqfMUw4-0dOTeXVgHaFC?rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* hiệu ứng đẹp */
+}
+.home-page header {
+    background: transparent;   /* bỏ ảnh */
+}
+/* ===== TRANG CHỦ ===== */
+.home-page .nav-bar {
+    position: fixed;      /* cố định trên cùng */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Đẩy nội dung xuống tránh bị nav che */
+.home-page header {
+    margin-top: 100px;   /* điều chỉnh tùy chiều cao nav */
+}
+.home-page .nav-bar {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+}
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid #ffd700;
+    box-shadow: 
+        0 0 15px rgba(255,215,0,0.6),
+        0 0 30px rgba(255,215,0,0.3);
+}
+.image-box img:hover {
+    transform: scale(1.03);
+    transition: 0.4s;
+}
+.hoatdong-page {
+    background: linear-gradient(-45deg, #fe8c00, #ffa929, #ffb25a, #faae3d91);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+.content-section {
+    background: linear-gradient(135deg, #1e2a38, #243447);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+h4 {
+    color: #ffd700;
+    text-shadow: 
+        0 0 8px rgba(255,215,0,0.6),
+        0 0 15px rgba(255,215,0,0.4);
+}
+.content-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+
+    padding: 40px;
+    width: 85%;
+    margin: 40px auto;
+    border-radius: 12px;
+}
+
+/* Phần chữ */
+.text-box {
+    flex: 2;
+}
+
+/* Phần hình */
+.image-box {
+    flex: 1;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+.dactrung-page {
+    background: linear-gradient(135deg, #5a3e2b, #8b5e3c, #3e2723);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+/* ===== KHUNG NỘI DUNG PHONG CÁCH LỊCH SỬ ===== */
+.content-history {
+    background: #f4e9d8;        /* màu giấy cổ */
+    color: #2b2b2b;             /* chữ nâu đậm dễ đọc */
+    
+    width: 85%;
+    margin: 50px auto;
+    padding: 40px;
+
+    border-radius: 12px;
+    border: 1px solid #8b5e3c;  /* viền nâu cổ */
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.content-history h4 {
+    color: #5a3e2b;     /* nâu đậm */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+    .content-history {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.image-bottom {
+    margin-top: 25px;
+    text-align: center; /* căn giữa hình */
+}
+
+.image-bottom img {
+    width: 70%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.intro.reverse {
+    background: #f4e9d8;        /* màu giấy cổ */
+    color: #2b2b2b;             /* chữ nâu đậm dễ đọc */
+    
+    width: 85%;
+    margin: 50px auto;
+    padding: 40px;
+
+    border-radius: 12px;
+    border: 1px solid #8b5e3c;  /* viền nâu cổ */
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    flex-direction: row-reverse;
+}
+.intro.reverse h4 {
+    color: #5a3e2b;     /* nâu đậm */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+    @media (max-width: 768px) {
+    .intro.reverse {
+        flex-direction: column;
+    }
+}
+/* ===== TRANG KẾT QUẢ ===== */
+.ketqua-page {
+background: linear-gradient(135deg, #0b2545, #1e2a38, #0d1b2a);    
+background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+.content-result {
+    background: #243447;
+    color: white;
+    border: 1px solid #c9a227;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.result-text p {
+    position: relative;
+    padding-left: 30px;
+}
+
+.result-text p::before {
+    content: "⇒";
+    position: absolute;
+    left: 0;
+    color: #ffd700;  /* vàng nổi bật */
+    font-weight: bold;
+}
+

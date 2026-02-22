@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>KẾT QUẢ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ketqua-page">
+<header>
+    <h1>Lịch sử ngoại giao Việt Nam</h1>
+    <h2>Phan Bội Châu</h2>
+</header>
+<nav class="nav-bar">
+    <a href="TRANG CHỦ.html">Trang chủ</a>
+    <a href="BỐI CẢNH.html">Bối cảnh</a>
+    <a href="HOẠT ĐỘNG.html">Hoạt động</a>
+    <a href="ĐẶC TRƯNG.html">Đặc trưng</a>
+    <a href="KẾT QUẢ.html">Kết quả</a>
+</nav>
+<main>
+   <center> <h2>KẾT QUẢ</h2></center>
+   <div class="content-result">
+   <p>
+        - Ông sang Nhật Bản để vận động sự ủng hộ của chính giới và trí thức Nhật.
+    </p>
+      <p>
+       - Tổ chức phong trào Phong trào Đông Du (1905–1909), đưa nhiều thanh niên Việt Nam sang Nhật học tập
+    </p>
+      <p>
+        - Thành lập Hội Duy Tân nhằm chuẩn bị lực lượng chống Pháp.
+    </p>
+      <p>
+       - Liên hệ với các nhà cách mạng ở Trung Quốc để tranh thủ sự hỗ trợ.
+    </p>
+   <div class="result-text">
+    <p>Tuy nhiên, do áp lực từ Pháp, chính phủ Nhật đã trục xuất lưu học sinh Việt Nam, khiến phong trào Đông Du tan rã.
+</p>
+<p>Hoạt động ngoại giao chưa đạt được mục tiêu giành độc lập hay nhận được sự hỗ trợ quân sự lâu dài từ nước ngoài.
+</p>
+   </div>
+   </div>
+    <center> <h2>Ý NGHĨA </h2></center>
+   <div class="content-result">
+    <p>
+        - Mở ra xu hướng cứu nước mới: tìm đường giải phóng dân tộc thông qua hợp tác quốc tế.
+    </p>
+    <p>
+        - Góp phần thức tỉnh lòng yêu nước và tinh thần cách mạng của thanh niên Việt Nam.
+    </p>
+    <p>
+        -Tạo điều kiện tiếp thu tư tưởng tiến bộ và mô hình canh tân của Nhật Bản.
+
+    </p>
+    <p>
+        - Đặt nền tảng cho các phong trào cách mạng Việt Nam về sau.
+    </p>
+    <p>
+        - Thể hiện tầm nhìn mới trong phong trào yêu nước đầu thế kỷ XX, chuyển từ đấu tranh trong nước sang vận động quốc tế.
+    </p>
+   </div>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("a");
+
+    for (let link of links) {
+        link.addEventListener("click", function (e) {
+            if (this.href && this.href.includes(window.location.hostname)) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location = this.href;
+                }, 500);
+            }
+        });
+    }
+});
+</script>
+</body>
