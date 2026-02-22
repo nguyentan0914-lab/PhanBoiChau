@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head> 
+    <meta charset="UTF-8">
+    <title>Trang chủ - Phan Bội Châu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+<header>
+    <h1>Lịch sử ngoại giao Việt Nam</h1>
+    <h2>Phan Bội Châu</h2>
+</header>
+
+<nav class="nav-bar">
+    <a href="TRANG CHỦ.html">Trang chủ</a>
+    <a href="BỐI CẢNH.html">Bối cảnh</a>
+    <a href="HOẠT ĐỘNG.html">Hoạt động</a>
+    <a href="ĐẶC TRƯNG.html">Đặc trưng</a>
+    <a href="KẾT QUẢ.html">Kết quả</a>
+</nav>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("a");
+
+    for (let link of links) {
+        link.addEventListener("click", function (e) {
+            if (this.href && this.href.includes(window.location.hostname)) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location = this.href;
+                }, 500);
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
