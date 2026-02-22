@@ -158,12 +158,22 @@ nav a {
         transform: scale(1);
     }
 }
+/* Desktop */
 .home-page {
     background-image: url("https://tse1.mm.bing.net/th/id/OIP.qXC7iGSqfMUw4-0dOTeXVgHaFC?rs=1&pid=ImgDetMain&o=7&rm=3");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* hiệu ứng đẹp */
+    background-attachment: fixed;
 }
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .home-page {
+        background-attachment: scroll;   /* bỏ fixed */
+        background-position: top center; /* chỉnh lại điểm nhìn */
+    }
+}/* hiệu ứng đẹp */
+
 .home-page header {
     background: transparent;   /* bỏ ảnh */
 }
@@ -174,6 +184,7 @@ nav a {
     left: 0;
     width: 100%;
     z-index: 1000;
+    background:none
 }
 
 /* Đẩy nội dung xuống tránh bị nav che */
@@ -336,4 +347,3 @@ background-size: 400% 400%;
     color: #ffd700;  /* vàng nổi bật */
     font-weight: bold;
 }
-
